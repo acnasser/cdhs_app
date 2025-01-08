@@ -9,6 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  font_awesome_flutter: ^10.8.0
+  google_fonts: ^6.2.1
+  google_maps_flutter: ^2.10.0
+  latlong2: ^0.9.1
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +21,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+   - assets/images/
+   - assets/map_style.json
