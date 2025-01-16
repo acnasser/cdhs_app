@@ -1,9 +1,10 @@
 import 'package:cdhs_app/create_account_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cdhs_app/landingPage.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -27,9 +28,10 @@ class _LoginScreenState extends State<LoginScreen> {
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
       );
-      // Navigate to the next screen or dashboard
+      Navigator.push(context, MaterialPageRoute(builder: (_) => LandingpageScreen()));// Navigate to the next screen or dashboard
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Login successful!')),
+        
       );
     } on FirebaseAuthException catch (e) {
       setState(() {
@@ -40,6 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
         _isLoading = false;
       });
     }
+    
   }
 
   @override
